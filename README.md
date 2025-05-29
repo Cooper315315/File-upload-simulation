@@ -1,16 +1,18 @@
-# README: Secure File Upload Demonstration
+# File Upload Simulation 
 
-## 1. Discussion of the Chosen Question, Answer, and Conclusion
+## 1. Introduction and Question 
+**Introduction:**  
+"Unrestricted File Upload (CWE-434)" is a critical vulnerability identified in the previous group assignment. In this assignment, we will demonstrate 1) how a "Unrestricted File Upload" vulnerability and 2) how a secure content validation operates in a simulation enviroment.
 
-**Chosen question:**  
-*"Is file extension validation alone sufficient to prevent malicious file uploads, or is content (magic bytes) validation also required?"*
+Many application uses file extension checks to restrict malicious files upload. However, both research and industry practices have shown that this method is not an effective mechanism against malicious files upload. Attackers can bypass this checks by renaming extensions of the malicious files (e.g., from `shell.php` to `shell.jpg`) or using double extensions ((e.g., from `install.exe` to `install.exe.jpg`)
+[3][6].  
 
-**Discussion:**  
-File upload vulnerabilities are a major attack vector in cyber-physical systems, as highlighted in the attached vulnerability table (see Controller 434: Unrestricted file upload)[1]. Many applications rely on file extension checks to restrict uploads to "safe" file types (e.g., `.jpg`, `.png`). However, research and industry best practices show that extension checks alone are not enough. Attackers can easily bypass these checks by renaming malicious files (e.g., uploading `shell.php` as `shell.jpg`), using double extensions (`image.jpg.php`), or exploiting poorly implemented filters[3][6].  
-Magic bytes, or file signatures, are unique sequences at the start of files that indicate their true type[2][3]. Validating both extension and magic bytes ensures that the file's content matches its claimed extension, preventing many bypass techniques.
+A more sophisticated security procedure is required to tackle this issue. Hence, Magic Bytes validation (or file signatures) comes into play. Magic Bytes refers to a unique sequences of characters, and each file type has its own unique sequences (e.g. jpg: `FF` `D8`). This method validates both file extention and the magic bytes to ensure the content matches with its claimed extension, which effectively prevents bypassing techniques such as renaming extension and double extension.[2][3]
 
-**Answer & Conclusion:**  
-Extension validation alone is *not* sufficient to prevent malicious uploads. Magic bytes (content) validation is also required to reliably identify and block disguised or dangerous files[3][4]. The secure approach is to use a whitelist of allowed extensions *and* verify the file's magic bytes before accepting the upload.
+**Question:**  
+*"Does content validation (magic bytes) enhance security effectiveness compared to extension validation alone? "*
+
+Based on the ABCDE characteristics in function of security, this question is based on the A - elemment "Autonomy" because how the controller and client application runs independently. The controller validates and implements security procedures whilst the client uploads files to the system.
 
 ---
 
@@ -81,6 +83,8 @@ This model allows users to observe and compare the outcomes of both validation s
 - In Version 2.0, the same file will be rejected because the magic bytes do not match the `.jpg` signature.
 
 ---
+**Conclusion:**  
+Extension validation alone is *not* sufficient to prevent malicious uploads. Magic bytes (content) validation is also required to reliably identify and block disguised or dangerous files[3][4]. The secure approach is to use a whitelist of allowed extensions *and* verify the file's magic bytes before accepting the upload.
 
 **References:**  
 - [1] Vulnerability Table (see attached image)  
