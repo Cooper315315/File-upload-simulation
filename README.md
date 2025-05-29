@@ -63,6 +63,11 @@ This model allows users to observe and compare the outcomes of both validation s
 4. **Observe the Results:**
    - The controller terminal will display detailed information about each upload, including the security decision and reasons for rejection if applicable.
    - The client will display the server's response.
+  
+  ![Screenshot 2025-05-30 at 00 26 51](https://github.com/user-attachments/assets/c34d383f-801d-4589-9140-0dabf174c4e7)
+![Screenshot 2025-05-30 at 00 26 33](https://github.com/user-attachments/assets/d9745a22-0f3d-4e7c-bd0f-2c5217e99091)
+![Screenshot 2025-05-30 at 00 26 41](https://github.com/user-attachments/assets/9e8c4216-8349-4d9a-8a44-3be6d4d10c31)
+
 
 **Demonstration:**  
 - In Version 1.0, try uploading a `.php` file renamed as `.jpg`—it will be accepted (vulnerable).
