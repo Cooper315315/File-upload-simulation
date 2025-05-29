@@ -18,7 +18,7 @@ Based on the ABCDE characteristics in function of security, this question is bas
 
 ## 2. Description of the Model Implemented
 
-This project implements a **client-server model** using Python sockets to simulate file uploads in a CPS environment:
+This assignment uses Python sockets to create a file upload simulation in a CPS environment and it is done by the implementaion of **client-server model**.
 
 - **Controller (Server):**
   - Prompts the user to select version 1.0 (vulnerable: extension check only) or version 2.0 (secure: extension + magic bytes check).
