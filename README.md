@@ -34,38 +34,49 @@ This client vs controller model demonstrates how different extension validation 
 
 ---
 
-## 3. Instructions on How to Execute the Code
+## 3. Instructions
 
 **Prerequisites:**  
-- Python 3.x installed on your system.
+- Install Python 3.x on your system.
 
 **Steps:**
-
-1. **Download or create the following files:**
+1. **Download the following files:**
    - `controller4.py` (server)
    - `client4.py` (client)
-   - Test files with various extensions and content (e.g., `.jpg`, `.php`, `.exe`). You can create a dummy `.php` file by saving `<?php echo "test"; ?>` as `test.php`.
+   - Test files with various extensions including image file (`.png`), executable (`.exe`) and Hypertext Preprocessor (`.php`).
 
 2. **Start the Controller (Server):**
-   - Open a terminal and run:
+   - Open a terminal and change to the directory where the downloaded python files are located:
+     ```
+     cd [INSERT PATH HERE]
+     ```
+   - Run the python file:
      ```
      python controller4.py
      ```
    - When prompted, select:
-     - `1` for Version 1.0 (extension check only, vulnerable)
-     - `2` for Version 2.0 (extension + magic bytes check, secure)
+     - `1` for Version 1.0 (Vulnerable: extension check only)
+     - `2` for Version 2.0 (Secure: extension + magic bytes check)
+       
+![Screenshot 2025-05-30 at 00 20 44](https://github.com/user-attachments/assets/c4c7a749-23b3-4a33-a675-2b497c76a549)
 
-3. **Start the Client:**
-   - In a separate terminal, run:
+4. **Start the Client:**
+   - Open a separate terminal and change the directory, run:
+     ```
+     cd [INSERT PATH HERE]
+     ```
+   - Run the python file:
      ```
      python client4.py
      ```
-   - Enter the path to a file you want to upload (e.g., `test.php`, `image.jpg`).
-
-4. **Observe the Results:**
-   - The controller terminal will display detailed information about each upload, including the security decision and reasons for rejection if applicable.
-   - The client will display the server's response.
-   - Demonstration commands are listed below
+   - Enter the path to a file you want to upload (e.g., `sample.php`, `image.png`).
+     
+     For example:
+     
+     ```
+     /Users/cooperli/Desktop/M6_coding/Deadpool.png
+     ```
+    - Demonstration commands used in section 5 are listed below:
      ```
      /Users/cooperli/Desktop/M6_coding/Deadpool.png
      /Users/cooperli/Desktop/M6_coding/1mb.exe
@@ -73,24 +84,21 @@ This client vs controller model demonstrates how different extension validation 
      /Users/cooperli/Desktop/M6_coding/1mb.exe.jpg
      /Users/cooperli/Desktop/M6_coding/1mb.jpg
      ```
+
+5. **Observe the Results:**
+   - The controller terminal will display detailed information about each upload, including the security decision and reasons for rejection if applicable.
+   - The client will display the server's response.
   
-![Screenshot 2025-05-30 at 00 26 33](https://github.com/user-attachments/assets/d9745a22-0f3d-4e7c-bd0f-2c5217e99091)
-![Screenshot 2025-05-30 at 00 26 41](https://github.com/user-attachments/assets/9e8c4216-8349-4d9a-8a44-3be6d4d10c31)
-
-
 **Demonstration:**  
 - In Version 1.0, try uploading a `.php` file renamed as `.jpg`—it will be accepted (vulnerable).
 - In Version 2.0, the same file will be rejected because the magic bytes do not match the `.jpg` signature.
 
 ---
 **Conclusion:**  
-Extension validation alone is *not* sufficient to prevent malicious uploads. Magic bytes (content) validation is also required to reliably identify and block disguised or dangerous files[3][4]. The secure approach is to use a whitelist of allowed extensions *and* verify the file's magic bytes before accepting the upload.
+Extension validation alone is insufficient to prevent malicious uploads as it can be easily bypassed by renaming and double extension. By implementing magic bytes validation and extension validation together, the application can effectively identify true file's extension and reject disgusied malicious files. [3][4]
 
 **References:**  
 - [1] Vulnerability Table (see attached image)  
 - [2][3][4][6] Security best practices and magic bytes validation: see provided search results.
 
----
 
-**Conclusion:**  
-This project demonstrates that file extension validation alone is insufficient for secure file uploads. Magic bytes validation is essential to prevent attackers from bypassing filters and uploading malicious files.
