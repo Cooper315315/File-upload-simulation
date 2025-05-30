@@ -94,7 +94,8 @@ This client vs controller model demonstrates how different extension validation 
 - In Version 2.0, the same file will be rejected because the magic bytes do not match the `.jpg` signature.
 
 1) In the first part of the demonstration, we select version 1.0 so that we can see how to bypass extension validation.
-![Screenshot 2025-05-30 at 00 21 06](https://github.com/user-attachments/assets/918b01b8-4333-4e63-a05e-5eafb32707da)
+![Screenshot 2025-05-30 at 00 21 06](https://github.com/user-attachments/assets/b57ec5c5-1d5c-4863-9d34-4d9586abb65b)
+
 
 In the figure below, you can see a normal image (`.png`) is uploaded from the client side to the controller side.
 
@@ -118,8 +119,13 @@ However, when the file with double extension (e.g. `.exe.jpg`) is uploaded, it w
 
 2) In the second part of the demonstration, we select version 2.0 and see how magic bytes validation prevent bypassing techniques in the previous demonstration.
 
+Similar to the previous demonstration with version 1.0, it accepts a genuie image (`.png`) and rejecets an executable (`.exe`).
 
+![Screenshot 2025-05-30 at 00 31 43](https://github.com/user-attachments/assets/b62aea7c-2cd8-4b9f-be52-e85f4511139f)
 
+Unlike version 1.0, version 2.0 uses magic bytes validation and successfully rejects both malicious files crafted by double extension (`.exe.jpg`) and renaming extension (from `1mb.exe` to `1mb.jpg`).
+
+![Screenshot 2025-05-30 at 00 34 03](https://github.com/user-attachments/assets/03bc6f18-fe34-4aaf-84c0-17e70d0a40dd)
 
 ---
 **Conclusion:**  
