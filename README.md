@@ -136,3 +136,4 @@ Extension validation alone is insufficient to prevent malicious uploads as it ca
 - [2][3][4][6] Security best practices and magic bytes validation: see provided search results.
 
 
+(Word counts: 857)
