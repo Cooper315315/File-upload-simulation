@@ -21,16 +21,16 @@ Based on the ABCDE characteristics in function of security, this question is bas
 This assignment uses Python sockets to create a file upload simulation in a CPS environment and it is done by the implementaion of **client-server model**.
 
 - **Controller (Server):**
-  - Prompts the user to select version 1.0 (vulnerable: extension check only) or version 2.0 (secure: extension + magic bytes check).
-  - Receives files from the client and applies the selected validation strategy.
-  - Logs detailed information about each upload, including file name, type, size, time, extension/magic bytes validation results, and the security decision.
-  - In secure mode, rejects files whose content does not match their extension, demonstrating defense against common attack techniques (e.g., renaming `.php` to `.jpg`).
+  - User can select 2 different versions. Version 1.0 is a vulnerable application using only extension checking, whereas Version 2.0 is a secure version using both extension check and magic bytes validation.
+  - Both version receive files from the client side and apply security validations.
+  - Upon each upload, the controller outputs important information including receiving date & time, file name, file type, file size and whether the file is successfully uploaded or rejected due to security checks.
+  - In secure version (v2.0), common techniques such as renaming and double extension will not work because the file content does not match with its content extension.
 
 - **Client:**
-  - Allows the user to select and upload a file to the controller.
-  - Receives and displays the server's acceptance or rejection message.
+  - User can upload files to the controller via the client side
+  - The client outputs a message and inform users whether the server accepts or rejects the file.
 
-This model allows users to observe and compare the outcomes of both validation strategies in a controlled environment.
+This client vs controller model demonstrates how different extension validation methods interact with normal and potential harmful file types in a controlled environment.
 
 ---
 
