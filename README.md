@@ -93,6 +93,34 @@ This client vs controller model demonstrates how different extension validation 
 - In Version 1.0, try uploading a `.php` file renamed as `.jpg`—it will be accepted (vulnerable).
 - In Version 2.0, the same file will be rejected because the magic bytes do not match the `.jpg` signature.
 
+1) In the first part of the demonstration, we select version 1.0 so that we can see how to bypass extension validation.
+![Screenshot 2025-05-30 at 00 21 06](https://github.com/user-attachments/assets/918b01b8-4333-4e63-a05e-5eafb32707da)
+
+In the figure below, you can see a normal image (`.png`) is uploaded from the client side to the controller side.
+
+*Client*
+![Screenshot 2025-05-31 at 01 04 53](https://github.com/user-attachments/assets/2e656657-f067-436a-ab1a-91211d8cba10)
+
+*Controller*
+![Screenshot 2025-05-30 at 00 22 12](https://github.com/user-attachments/assets/f16fe87b-0eee-4ea4-a78f-bf0922d9f598)
+
+It can detect and reject restricted file types such as .exe executable files.
+
+*Client*
+![Screenshot 2025-05-30 at 00 23 02](https://github.com/user-attachments/assets/6849920d-678f-4b04-8a11-058cef63085a)
+
+*Controller*
+![Screenshot 2025-05-30 at 00 23 21](https://github.com/user-attachments/assets/4824c5c3-2e8e-4c6f-b1b6-b88eb80b4d7d)
+
+However, when the file with double extension (e.g. `.exe.jpg`) is uploaded, it was accepted from the server side, same as the file with the extension renamed. (from `1mb.exe` to `1mb.jpg`)
+
+![Screenshot 2025-05-30 at 00 25 37](https://github.com/user-attachments/assets/5e4a3fb2-90fd-41c1-9724-21183cca9369)
+
+2) In the second part of the demonstration, we select version 2.0 and see how magic bytes validation prevent bypassing techniques in the previous demonstration.
+
+
+
+
 ---
 **Conclusion:**  
 Extension validation alone is insufficient to prevent malicious uploads as it can be easily bypassed by renaming and double extension. By implementing magic bytes validation and extension validation together, the application can effectively identify true file's extension and reject disgusied malicious files. [3][4]
