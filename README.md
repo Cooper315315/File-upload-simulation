@@ -90,9 +90,6 @@ This client vs controller model demonstrates how different extension validation 
    - The client will display the server's response.
   
 **Demonstration:**  
-- In Version 1.0, try uploading a `.php` file renamed as `.jpg`—it will be accepted (vulnerable).
-- In Version 2.0, the same file will be rejected because the magic bytes do not match the `.jpg` signature.
-
 1) In the first part of the demonstration, we select version 1.0 so that we can see how to bypass extension validation.
 ![Screenshot 2025-05-30 at 00 21 06](https://github.com/user-attachments/assets/b57ec5c5-1d5c-4863-9d34-4d9586abb65b)
 
