@@ -1,6 +1,6 @@
 # File Upload Simulation 
 
-## 1. Introduction and Question 
+## 1. Introduction
 **Introduction:**  
 Unrestricted File Upload (CWE-434) is a critical vulnerability identified in the previous group assignment. In this assignment, we will demonstrate how this vulnerability operates and how to circumvent this vulnerability in a simulated environment.
 
