@@ -6,7 +6,7 @@
 
 Many application uses file extension checks to restrict malicious files upload. However, both research and industry practices have shown that this method is not an effective mechanism against malicious files upload. Attackers can bypass this checks by renaming extensions of the malicious files (e.g., from `shell.php` to `shell.jpg`) or using double extensions ((e.g., from `install.exe` to `install.exe.jpg`)(Suryaningrat et al, 2024)
 
-A more sophisticated security procedure is required to tackle this issue. Hence, Magic Bytes validation (or file signatures) comes into play. Magic Bytes refers to a unique sequences of characters, and each file type has its own unique sequences (e.g. jpg: `FF` `D8`). This method validates both file extention and the magic bytes to ensure the content matches with its claimed extension, which effectively prevents bypassing techniques such as renaming extension and double extension.[2][3]
+A more sophisticated security procedure is required to tackle this issue. Hence, Magic Bytes validation (or file signatures) comes into play. Magic Bytes refers to a unique sequences of characters, and each file type has its own unique sequences (e.g. jpg: `FF` `D8`). This method validates both file extention and the magic bytes to ensure the content matches with its claimed extension, which effectively prevents bypassing techniques such as renaming extension and double extension. (Blackbird-eu, 2024)
 
 **Question:**  
 *"Does content validation (magic bytes) enhance security effectiveness compared to extension validation alone? "*
@@ -128,6 +128,8 @@ Unlike version 1.0, version 2.0 uses magic bytes validation and successfully rej
 Extension validation alone is insufficient to prevent malicious uploads as it can be easily bypassed by renaming and double extension. By implementing magic bytes validation and extension validation together, the application can effectively identify true file's extension and reject disgusied malicious files. [3][4]
 
 **References:**  
+Blackbird-eu. (2024) _File Upload Vulnerabilities and Security Best Practices._ Available from: https://www.vaadata.com/blog/file-upload-vulnerabilities-and-security-best-practices/ [Accessed 1st June 2025]
+
 Suryaningrat, A. et al. (2024) _File Upload Security: Essential Practices for Programmers._ Indonesia: Department Informatics Engineering, Faculty Engineering and Informatics, Dian
 Nusantara University, Indonesia
 
