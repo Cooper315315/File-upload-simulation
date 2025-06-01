@@ -4,9 +4,9 @@
 **Introduction:**  
 "Unrestricted File Upload (CWE-434)" is a critical vulnerability identified in the previous group assignment. In this assignment, we will demonstrate 1) how a "Unrestricted File Upload" vulnerability and 2) how a secure content validation operates in a simulation enviroment.
 
-Many application uses file extension checks to restrict malicious files upload. However, both research and industry practices have shown that this method is not an effective mechanism against malicious files upload. Attackers can bypass this checks by renaming extensions of the malicious files (e.g., from `shell.php` to `shell.jpg`) or using double extensions ((e.g., from `install.exe` to `install.exe.jpg`)(Suryaningrat et al, 2024)
+Many application uses file extension checks to restrict malicious files upload. However, research has shown that this method is not an effective mechanism against malicious files upload. Attackers can bypass this checks by renaming extensions of the malicious files (e.g., from `shell.php` to `shell.jpg`) or using double extensions ((e.g., from `install.exe` to `install.exe.jpg`)(Suryaningrat et al, 2024)
 
-A more sophisticated security procedure is required to tackle this issue. Hence, Magic Bytes validation (or file signatures) comes into play. Magic Bytes refers to a unique sequences of characters, and each file type has its own unique sequences (e.g. jpg: `FF` `D8`). This method validates both file extention and the magic bytes to ensure the content matches with its claimed extension, which effectively prevents bypassing techniques such as renaming extension and double extension. (Blackbird-eu, 2024)
+A secure approach is the implementation of Magic Bytes validation (or file signatures). Magic Bytes refers to a unique sequences of characters, and each file type has its own unique sequences (e.g. jpg: `FF` `D8`). This method validates both file extention and the magic bytes to ensure the content matches with its claimed extension, which effectively prevents bypassing techniques such as renaming extension and double extension. (Blackbird-eu, 2024)
 
 **Question:**  
 *"Does content validation (magic bytes) enhance security effectiveness compared to extension validation alone? "*
@@ -22,7 +22,7 @@ This assignment uses Python sockets to create a file upload simulation in a CPS 
 - **Controller (Server):**
   - User can select 2 different versions. Version 1.0 is a vulnerable application using only extension checking, whereas Version 2.0 is a secure version using both extension check and magic bytes validation.
   - Both version receive files from the client side and apply security validations.
-  - Upon each upload, the controller outputs important information including receiving date & time, file name, file type, file size and whether the file is successfully uploaded or rejected due to security checks.
+  - Upon each upload, the controller outputs important information including receiving date & time, file name, type, size and whether the file is successfully uploaded or rejected.
   - In secure version (v2.0), common techniques such as renaming and double extension will not work because the file content does not match with its content extension.
 
 - **Client:**
@@ -91,7 +91,6 @@ This client vs controller model demonstrates how different extension validation 
 **Demonstration:**  
 1) In the first part of the demonstration, we select version 1.0 so that we can see how to bypass extension validation.
 ![Screenshot 2025-05-30 at 00 21 06](https://github.com/user-attachments/assets/b57ec5c5-1d5c-4863-9d34-4d9586abb65b)
-
 
 In the figure below, you can see a normal image (`.png`) is uploaded from the client side to the controller side.
 
