@@ -11,7 +11,7 @@ A secure approach is the implementation of Magic Bytes validation. Magic Bytes r
 **Question:**  
 *"Does content validation (magic bytes) enhance security effectiveness compared to extension validation alone? "*
 
-Based on the ABCDE characteristics in function of security, this question is based on the A - elemment "Autonomy" because how the controller and client application runs independently. The controller validates and implements security procedures whilst the client uploads files to the system.
+Based on the ABCDE characteristics in function of security, this question is based on the A - element "Autonomy" because how the controller and client application runs independently. The controller validates and implements security procedures whilst the client uploads files to the system.
 
 ---
 
@@ -114,7 +114,7 @@ However, when the file with double extension (e.g. `.exe.jpg`) is uploaded, it w
 
 2) In the second part of the demonstration, we select version 2.0 and see how magic bytes validation prevent bypassing techniques in the previous demonstration.
 
-Similar to the previous demonstration with version 1.0, it accepts a genuie image (`.png`) and rejecets an executable (`.exe`).
+Similar to the previous demonstration with version 1.0, it accepts a genuine image (`.png`) and rejects an executable (`.exe`).
 
 ![Screenshot 2025-05-30 at 00 31 43](https://github.com/user-attachments/assets/b62aea7c-2cd8-4b9f-be52-e85f4511139f)
 
@@ -124,7 +124,7 @@ Unlike version 1.0, version 2.0 uses magic bytes validation and successfully rej
 
 ---
 **Conclusion:**  
-Extension validation alone is insufficient to prevent malicious uploads as it can be easily bypassed by renaming and double extension. By implementing magic bytes validation and extension validation together, the application can effectively identify true file's extension and reject disgusied malicious files.
+Extension validation alone is insufficient to prevent malicious uploads as it can be easily bypassed by renaming and double extension. By implementing magic bytes validation and extension validation together, the application can effectively identify true file's extension and reject disguised malicious files.
 
 **References:**  
 Blackbird-eu. (2024) _File Upload Vulnerabilities and Security Best Practices._ Available from: https://www.vaadata.com/blog/file-upload-vulnerabilities-and-security-best-practices/ [Accessed 1st June 2025]
