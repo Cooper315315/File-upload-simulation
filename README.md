@@ -88,7 +88,7 @@ This client vs controller model demonstrates how different extension validation 
    - The controller terminal will display detailed information about each upload, including the security decision and reasons for rejection if applicable.
    - The client will display the server's response.
   
-**Demonstration:**  
+## 4. Demonstration:
 1) In the first part of the demonstration, we select version 1.0 so that we can see how to bypass extension validation.
 ![Screenshot 2025-05-30 at 00 21 06](https://github.com/user-attachments/assets/b57ec5c5-1d5c-4863-9d34-4d9586abb65b)
 
