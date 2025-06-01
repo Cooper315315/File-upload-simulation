@@ -2,7 +2,7 @@
 
 ## 1. Introduction and Question 
 **Introduction:**  
-"Unrestricted File Upload (CWE-434)" is a critical vulnerability identified in the previous group assignment. In this assignment, we will demonstrate how this vulnerability operates and how to circumvent this vulnerability in a simulated environment.
+Unrestricted File Upload (CWE-434) is a critical vulnerability identified in the previous group assignment. In this assignment, we will demonstrate how this vulnerability operates and how to circumvent this vulnerability in a simulated environment.
 
 Many application uses file extension checks to restrict malicious files upload. However, research has shown that this method is not effective against malicious files upload. Attackers can bypass this checks by renaming extensions of the malicious files (e.g., from `shell.php` to `shell.jpg`) or using double extensions ((e.g., from `install.exe` to `install.exe.jpg`)(Suryaningrat et al, 2024)
 
