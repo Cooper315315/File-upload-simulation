@@ -4,8 +4,7 @@
 **Introduction:**  
 "Unrestricted File Upload (CWE-434)" is a critical vulnerability identified in the previous group assignment. In this assignment, we will demonstrate 1) how a "Unrestricted File Upload" vulnerability and 2) how a secure content validation operates in a simulation enviroment.
 
-Many application uses file extension checks to restrict malicious files upload. However, both research and industry practices have shown that this method is not an effective mechanism against malicious files upload. Attackers can bypass this checks by renaming extensions of the malicious files (e.g., from `shell.php` to `shell.jpg`) or using double extensions ((e.g., from `install.exe` to `install.exe.jpg`)
-[3][6].  
+Many application uses file extension checks to restrict malicious files upload. However, both research and industry practices have shown that this method is not an effective mechanism against malicious files upload. Attackers can bypass this checks by renaming extensions of the malicious files (e.g., from `shell.php` to `shell.jpg`) or using double extensions ((e.g., from `install.exe` to `install.exe.jpg`)(Suryaningrat et al, 2024)
 
 A more sophisticated security procedure is required to tackle this issue. Hence, Magic Bytes validation (or file signatures) comes into play. Magic Bytes refers to a unique sequences of characters, and each file type has its own unique sequences (e.g. jpg: `FF` `D8`). This method validates both file extention and the magic bytes to ensure the content matches with its claimed extension, which effectively prevents bypassing techniques such as renaming extension and double extension.[2][3]
 
@@ -129,7 +128,9 @@ Unlike version 1.0, version 2.0 uses magic bytes validation and successfully rej
 Extension validation alone is insufficient to prevent malicious uploads as it can be easily bypassed by renaming and double extension. By implementing magic bytes validation and extension validation together, the application can effectively identify true file's extension and reject disgusied malicious files. [3][4]
 
 **References:**  
-- [1] Vulnerability Table (see attached image)  
+Suryaningrat, A. et al. (2024) _File Upload Security: Essential Practices for Programmers._ Indonesia: Department Informatics Engineering, Faculty Engineering and Informatics, Dian
+Nusantara University, Indonesia
+
 - [2][3][4][6] Security best practices and magic bytes validation: see provided search results.
 
 
