@@ -125,15 +125,13 @@ Unlike version 1.0, version 2.0 uses magic bytes validation and successfully rej
 
 ---
 **Conclusion:**  
-Extension validation alone is insufficient to prevent malicious uploads as it can be easily bypassed by renaming and double extension. By implementing magic bytes validation and extension validation together, the application can effectively identify true file's extension and reject disgusied malicious files. [3][4]
+Extension validation alone is insufficient to prevent malicious uploads as it can be easily bypassed by renaming and double extension. By implementing magic bytes validation and extension validation together, the application can effectively identify true file's extension and reject disgusied malicious files.
 
 **References:**  
 Blackbird-eu. (2024) _File Upload Vulnerabilities and Security Best Practices._ Available from: https://www.vaadata.com/blog/file-upload-vulnerabilities-and-security-best-practices/ [Accessed 1st June 2025]
 
 Suryaningrat, A. et al. (2024) _File Upload Security: Essential Practices for Programmers._ Indonesia: Department Informatics Engineering, Faculty Engineering and Informatics, Dian
 Nusantara University, Indonesia
-
-- [2][3][4][6] Security best practices and magic bytes validation: see provided search results.
 
 
 (Word counts: 857)
